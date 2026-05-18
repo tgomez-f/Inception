@@ -1,0 +1,22 @@
+[mysqld]
+
+# dit a mariadb d'ecouter sur toutes les interfaces reseau (utile pour docker network)
+bind-address = 0.0.0.0
+
+# port sur lequel il ecoute
+port = 3306
+
+# connections maximum
+max_connections = 30
+
+# fait tourner maraidb sous cet user 
+user = mysql
+
+# crée un fichier PID pour connaitre id du process
+pid-file = /run/mysqld/mysqld.pid
+
+# precise ou trouver un fichier socket pour communiquer
+socket = /run/mysqld/mysqld.sock
+
+# pour que mariadb sache ou lire et ecrire via le volume (la ou il stock la db)
+datadir = /var/lib/mysql
