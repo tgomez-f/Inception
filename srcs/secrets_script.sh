@@ -1,22 +1,13 @@
 #!/bin/bash
-# echo "PWD=$(pwd)"
-
-# PATH_EXEC_SH="$(dirname "$0")"
-# ABS_PATH="$(cd "$PATH_EXEC_SH/.." && pwd)"
-
 
 mkdir -p "secrets"
 
-echo "mypassword" > "secrets/db_password.txt"
-echo "myrootpassword" > "secrets/db_root_password.txt"
-echo "adminpass" > "secrets/wp_admin_password.txt"
-echo "userpass" > "secrets/wp_user_password.txt"
+openssl rand -base64 15 > "secrets/db_password.txt"
+openssl rand -base64 15 > "secrets/db_root_password.txt"
+openssl rand -base64 15 > "secrets/wp_admin_password.txt"
+openssl rand -base64 15 > "secrets/wp_user_password.txt"
 
 echo "Secrets added."
 
-# $0	chemin du script
-# dirname	extrait le dossier
-# SCRIPT_DIR	dossier du script
-# cd ...	remonte à la racine
-# pwd	donne chemin absolu
-# ROOT_DIR	racine du projet
+# openssl rand : génère des octets aléatoires
+# -base64 : converti les donnees binaires en texte lisible

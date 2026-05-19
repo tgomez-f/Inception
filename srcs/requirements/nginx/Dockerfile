@@ -11,7 +11,6 @@ RUN openssl req -x509 -nodes -days 365 \
     -out /etc/nginx/ssl/nginx.crt
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY ./data/www /data/www
 
 EXPOSE 443
 
