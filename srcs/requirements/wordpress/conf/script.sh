@@ -49,4 +49,4 @@ if ! wp user get "$WP_USER" --allow-root 2>/dev/null; then
 fi
 
 # Lance php-fpm en foreground (PID 1) — pas de boucle
-exec php-fpm7.4 -F
+exec php-fpm8.2 -F
